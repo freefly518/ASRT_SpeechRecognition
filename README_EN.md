@@ -1,23 +1,30 @@
-# A Deep-Learning-Based Chinese Speech Recognition System
+# ASRT: A Deep-Learning-Based Chinese Speech Recognition System
 
 [![GPL-3.0 Licensed](https://img.shields.io/badge/License-GPL3.0-blue.svg?style=flat)](https://opensource.org/licenses/GPL-3.0) 
-[![TensorFlow Version](https://img.shields.io/badge/Tensorflow-1.13+-blue.svg)](https://www.tensorflow.org/) 
-[![Keras Version](https://img.shields.io/badge/Keras-2.3+-blue.svg)](https://keras.io/) 
+[![TensorFlow Version](https://img.shields.io/badge/Tensorflow-1.14+-blue.svg)](https://www.tensorflow.org/) 
 [![Python Version](https://img.shields.io/badge/Python-3.5+-blue.svg)](https://www.python.org/) 
 
 **ReadMe Language** | [中文版](https://github.com/nl8590687/ASRT_SpeechRecognition/blob/master/README.md) | English |
 
-[**View this project's wiki document (Chinese)**](https://asrt.ailemon.me/docs/)
+[**ASRT Project Home Page**](https://asrt.ailemon.net/) | 
+[**Released Download**](https://asrt.ailemon.net/download) | 
+[**View this project's wiki document (Chinese)**](https://asrt.ailemon.net/docs/) | 
+[**Experience Demo**](https://asrt.ailemon.net/demo) | 
+[**Donate**](https://github.com/nl8590687/ASRT_SpeechRecognition/wiki/donate)
 
 If you have any questions in your works with this project, welcome to put up issues in this repo and I will response as soon as possible. 
 
-You can check the [FAQ Page (Chinese)](https://asrt.ailemon.me/docs/issues) first before asking questions to avoid repeating questions.
+You can check the [FAQ Page (Chinese)](https://asrt.ailemon.net/docs/issues) first before asking questions to avoid repeating questions.
 
 A post about ASRT's introduction 
 * [ASRT: Chinese Speech Recognition System (Chinese)](https://blog.ailemon.me/2018/08/29/asrt-a-chinese-speech-recognition-system/)
 
+About how to use ASRT to train and deploy：
+* [Teach you how to use ASRT to train Chinese ASR model (Chinese)](<https://blog.ailemon.me/2020/08/20/teach-you-how-use-asrt-train-chinese-asr-model/>)
+* [Teach you how to use ASRT to deploy Chinese ASR API Server (Chinese)](<https://blog.ailemon.me/2020/08/27/teach-you-how-use-asrt-deploy-chinese-asr-api-server/>)
+
 For questions about the principles of the statistical language model that are often asked, see: 
-* [Simple word frequency statistics without Chinese word segmentation algorithm (Chinese)](https://blog.ailemon.me/2017/02/20/simple-words-frequency-statistic-without-segmentation-algorithm/)
+* [Simple Chinese word frequency statistics to generate N-gram language model (Chinese)](https://blog.ailemon.me/2017/02/20/simple-words-frequency-statistic-without-segmentation-algorithm/)
 * [Statistical Language Model: Chinese Pinyin to Words (Chinese)](https://blog.ailemon.me/2017/04/27/statistical-language-model-chinese-pinyin-to-words/)
 
 For questions about CTC, see: 
@@ -76,9 +83,9 @@ ASRT API Server startup please execute:
 $ python3 asrserver.py
 ```
 
-Please note that after opening the API server, you need to use the client software corresponding to this ASRT project for voice recognition. For details, see the Wiki documentation [ASRT Client Demo](https://asrt.ailemon.me/docs/client-demo).
+Please note that after opening the API server, you need to use the client software corresponding to this ASRT project for voice recognition. For details, see the Wiki documentation [ASRT Client Demo](https://asrt.ailemon.net/docs/client-demo).
 
-If you want to train and use Model 251, make changes in the corresponding position of the `import SpeechModel` in the code files.
+If you want to train and use other model(not Model 251), make changes in the corresponding position of the `import SpeechModel` in the code files.
 
 If there is any problem during the execution of the program or during use, it can be promptly put forward in the issue, and I will reply as soon as possible.
 
@@ -94,9 +101,9 @@ The maximum length of the input audio is 16 seconds, and the output is the corre
 
 * Questions about downloading trained models
 
-The complete source program that includes trained model weights can be obtained from the archives of the various versions of the software released in the [releases](https://github.com/nl8590687/ASRT_SpeechRecognition/releases) page of Github.
+The released finished software that includes trained model weights can be downloaded from [ASRT download page](https://asrt.ailemon.net/download). 
 
-The released finished software can be downloaded here: [ASRT download page](https://asrt.ailemon.me/download)
+Github [Releases](https://github.com/nl8590687/ASRT_SpeechRecognition/releases) page includes the archives of the various versions of the software released and it's introduction. Under each version module, there is a zip file that includes trained model weights files. 
 
 ### Language Model 
 
@@ -113,8 +120,7 @@ However, as the current international and domestic teams can achieve 98%, the ac
 ## Python libraries that need importing
 
 * python_speech_features
-* TensorFlow (1.13+)
-* Keras (2.3+)
+* TensorFlow (1.14 - 2.x)
 * Numpy
 * wave
 * matplotlib
@@ -123,8 +129,15 @@ However, as the current international and domestic teams can achieve 98%, the ac
 * h5py
 * http
 * urllib
+* requests
 
-[Dependent Environment Details](https://asrt.ailemon.me/docs/dependent-environment)
+If you have trouble when install those packages, please run the following script to do it as long as you have a GPU and CUDA 10.0 and cudnn 7.4 have been installed：
+
+```shell
+$ pip install -r requirements.txt
+```
+
+[Dependent Environment Details](https://asrt.ailemon.net/docs/dependent-environment)
 
 ## Data Sets 
 
@@ -189,12 +202,10 @@ If the provided dataset link cannot be opened and downloaded, click this link [O
 
 ## License
 
-[GPL v3.0](LICENSE) © [nl8590687](https://github.com/nl8590687) Author: [ailemon](https://ailemon.me/)
+[GPL v3.0](LICENSE) © [nl8590687](https://github.com/nl8590687) Author: [ailemon](https://www.ailemon.net/)
 
 ## Contributors
 [@zw76859420](https://github.com/zw76859420) 
 @madeirak @ZJUGuoShuai @williamchenwl
 
 @nl8590687 (repo owner)
-
-[**Donate**](https://github.com/nl8590687/ASRT_SpeechRecognition/wiki/donate)

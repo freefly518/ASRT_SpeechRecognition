@@ -1,5 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+#
+# Copyright 2016-2099 Ailemon.net
+#
+# This file is part of ASRT Speech Recognition Tool.
+#
+# ASRT is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# ASRT is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with ASRT.  If not, see <https://www.gnu.org/licenses/>.
+# ============================================================================
+
 """
 @author: nl8590687
 用于训练语音识别系统语音模型的程序
@@ -9,7 +27,7 @@ import platform as plat
 import os
 
 import tensorflow as tf
-from keras.backend.tensorflow_backend import set_session
+#from keras.backend.tensorflow_backend import set_session
 
 
 from SpeechModel251 import ModelSpeech, ModelName
@@ -33,7 +51,7 @@ if(not os.path.exists(modelpath)): # 判断保存模型的目录是否存在
 
 system_type = plat.system() # 由于不同的系统的文件路径表示不一样，需要进行判断
 if(system_type == 'Windows'):
-	datapath = 'E:\\语音数据集'
+	datapath = 'D:\\SpeechData'
 	modelpath = modelpath + '\\'
 elif(system_type == 'Linux'):
 	datapath = 'dataset'
@@ -45,7 +63,7 @@ else:
 
 ms = ModelSpeech(datapath)
 
-#ms.LoadModel(modelpath + 'speech_model251_e_0_step_327500.model')
+#ms.LoadModel(modelpath + 'speech_model251_e_0_step_327500.h5')
 ms.TrainModel(datapath, epoch = 50, batch_size = 16, save_step = 500)
 
 

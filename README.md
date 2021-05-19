@@ -1,32 +1,57 @@
-# A Deep-Learning-Based Chinese Speech Recognition System
-基于深度学习的中文语音识别系统，如果您觉得喜欢，请点一个 **"Star"** 吧~
+# ASRT: A Deep-Learning-Based Chinese Speech Recognition System
+ASRT是一个基于深度学习的中文语音识别系统，如果您觉得喜欢，请点一个 **"Star"** 吧~
 
 [![GPL-3.0 Licensed](https://img.shields.io/badge/License-GPL3.0-blue.svg?style=flat)](https://opensource.org/licenses/GPL-3.0) 
-[![TensorFlow Version](https://img.shields.io/badge/Tensorflow-1.13+-blue.svg)](https://www.tensorflow.org/) 
-[![Keras Version](https://img.shields.io/badge/Keras-2.3+-blue.svg)](https://keras.io/) 
+[![TensorFlow Version](https://img.shields.io/badge/Tensorflow-1.14+-blue.svg)](https://www.tensorflow.org/) 
 [![Python Version](https://img.shields.io/badge/Python-3.5+-blue.svg)](https://www.python.org/) 
 
 **ReadMe Language** | 中文版 | [English](https://github.com/nl8590687/ASRT_SpeechRecognition/blob/master/README_EN.md) |
 
-[**查看本项目的Wiki文档**](https://asrt.ailemon.me/docs/) 
+[**ASRT项目主页**](https://asrt.ailemon.net/) | 
+[**发布版下载**](https://asrt.ailemon.net/download) | 
+[**查看本项目的Wiki文档**](https://asrt.ailemon.net/docs/) | 
+[**实用效果体验Demo**](https://asrt.ailemon.net/demo) | 
+[**打赏作者**](https://github.com/nl8590687/ASRT_SpeechRecognition/wiki/donate)
 
-如果程序运行期间或使用中有什么问题，可以及时在issue中提出来，我将尽快做出答复。本项目作者交流QQ群：**867888133**
+如果程序运行期间或使用中有什么问题，可以及时在issue中提出来，我将尽快做出答复。本项目作者交流QQ群：**894112051**
 
-提问前可以先 [查看常见问题](https://asrt.ailemon.me/docs/issues) 避免重复提问
+提问前请仔细查看[项目文档](https://asrt.ailemon.net/docs/)、 
+[常见问题](https://asrt.ailemon.net/docs/issues)
+以及[Issues](https://github.com/nl8590687/ASRT_SpeechRecognition/issues) 避免重复提问
+
+以下问题AI柠檬博主和群友可能会拒绝回答，包括但不限于：
+* 询问已经写在 **ASRT语音识别项目文档** 和 **Issues** 上解决过的已知重复问题。
+* 找不到重点、不知所云的提问内容，但是不给出任何其他信息。
+* 跟ASRT项目没有直接相关的问题
+* “伸手党”类的问题
+
+```
+请注意，开发者并没有义务回复您的问题，也没用义务免费给你打工，您应该具备基本的提问技巧，并善用搜索引擎，
+每个人的时间都是宝贵的。
+```
+有关AI柠檬ASRT语音项目的相关信息亦可使用[AI柠檬站内搜索引擎](https://s.ailemon.me/)进行相关信息的搜索。
+
+## ASRT相关资料 
 
 ASRT的原理请查看本文：
 * [ASRT：一个中文语音识别系统](https://blog.ailemon.me/2018/08/29/asrt-a-chinese-speech-recognition-system/)
 
+ASRT训练和部署教程请看：
+* [教你如何使用ASRT训练中文语音识别模型](<https://blog.ailemon.me/2020/08/20/teach-you-how-use-asrt-train-chinese-asr-model/>)
+* [教你如何使用ASRT部署中文语音识别API服务器](<https://blog.ailemon.me/2020/08/27/teach-you-how-use-asrt-deploy-chinese-asr-api-server/>)
+
 关于经常被问到的统计语言模型原理的问题，请看：
 
 * [统计语言模型：从中文拼音到文本](https://blog.ailemon.me/2017/04/27/statistical-language-model-chinese-pinyin-to-words/)
-* [无需中文分词算法的简单词频统计](https://blog.ailemon.me/2017/02/20/simple-words-frequency-statistic-without-segmentation-algorithm/)
+* [统计N元语言模型生成算法：简单中文词频统计](https://blog.ailemon.me/2017/02/20/simple-words-frequency-statistic-without-segmentation-algorithm/)
 
 关于CTC的问题请看：
 
 * [[翻译]使用CTC进行序列建模](<https://blog.ailemon.me/2019/07/18/sequence-modeling-with-ctc/>)
 
 更多内容请访问作者的博客：[AI柠檬博客](https://blog.ailemon.me/)
+
+或使用[AI柠檬站内搜索引擎](https://s.ailemon.me/)进行相关信息的搜索
 
 ## Introduction 简介
 
@@ -79,9 +104,9 @@ ASRT API服务器启动请执行：
 $ python3 asrserver.py
 ```
 
-请注意，开启API服务器之后，需要使用本ASRT项目对应的客户端软件来进行语音识别，详见Wiki文档[ASRT客户端Demo](https://asrt.ailemon.me/docs/client-demo)。
+请注意，开启API服务器之后，需要使用本ASRT项目对应的客户端软件来进行语音识别，详见Wiki文档[ASRT客户端Demo](https://asrt.ailemon.net/docs/client-demo)。
 
-如果要训练和使用模型251，请在代码中 `import SpeechModel` 的相应位置做修改。
+如果要训练和使用非251版模型，请在代码中 `import SpeechModel` 的相应位置做修改。
 
 ## Model 模型
 
@@ -93,9 +118,9 @@ CNN + LSTM/GRU + CTC
 
 * 关于下载已经训练好的模型的问题
 
-可以在Github本仓库下[releases](https://github.com/nl8590687/ASRT_SpeechRecognition/releases)里面的查看发布的各个版本软件的压缩包里获得包含已经训练好模型参数的完整源程序。
+已经训练好的模型包含在发布版服务端程序压缩包里面，发布版成品服务端程序可以在此下载：[ASRT下载页面](https://asrt.ailemon.net/download)。
 
-发布的成品软件可以在此下载：[ASRT下载页面](https://asrt.ailemon.me/download)
+Github本仓库下[Releases](https://github.com/nl8590687/ASRT_SpeechRecognition/releases)页面里面还包括各个不同版本的介绍信息，每个版本下方的zip压缩包也是包含已经训练好的模型的发布版服务端程序压缩包。
 
 ### Language Model 语言模型
 
@@ -113,8 +138,7 @@ CNN + LSTM/GRU + CTC
 Python的依赖库
 
 * python_speech_features
-* TensorFlow (1.13+)
-* Keras (2.3+)
+* TensorFlow (1.14 - 2.x)
 * Numpy
 * wave
 * matplotlib
@@ -123,8 +147,15 @@ Python的依赖库
 * h5py
 * http
 * urllib
+* requests
 
-[程序运行依赖环境详细说明](https://asrt.ailemon.me/docs/dependent-environment)
+不会安装环境的同学请直接运行以下命令(前提是有GPU且已经安装好 CUDA 10.0 和 cudnn 7.4)：
+
+```shell
+$ pip install -r requirements.txt
+```
+
+[程序运行依赖环境详细说明](https://asrt.ailemon.net/docs/dependent-environment)
 
 ## Data Sets 数据集
 
@@ -200,7 +231,7 @@ Python的依赖库
 
 ## License 开源许可协议
 
-[GPL v3.0](LICENSE) © [nl8590687](https://github.com/nl8590687) 作者：[AI柠檬](https://ailemon.me/)
+[GPL v3.0](LICENSE) © [nl8590687](https://github.com/nl8590687) 作者：[AI柠檬](https://www.ailemon.net/)
 
 ## Contributors 贡献者们
 
@@ -208,5 +239,3 @@ Python的依赖库
 @madeirak @ZJUGuoShuai @williamchenwl
 
 @nl8590687 (repo owner)
-
-[**打赏作者**](https://github.com/nl8590687/ASRT_SpeechRecognition/wiki/donate)

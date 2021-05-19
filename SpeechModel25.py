@@ -1,5 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+#
+# Copyright 2016-2099 Ailemon.net
+#
+# This file is part of ASRT Speech Recognition Tool.
+#
+# ASRT is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# ASRT is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with ASRT.  If not, see <https://www.gnu.org/licenses/>.
+# ============================================================================
+
 """
 @author: nl8590687
 """
@@ -12,15 +30,15 @@ from general_function.file_dict import *
 from general_function.gen_func import *
 
 # LSTM_CNN
-import keras as kr
+import tensorflow.keras as kr
 import numpy as np
 import random
 
-from keras.models import Sequential, Model
-from keras.layers import Dense, Dropout, Input, Reshape # , Flatten,LSTM,Convolution1D,MaxPooling1D,Merge
-from keras.layers import Conv1D,LSTM,MaxPooling1D, Lambda, TimeDistributed, Activation,Conv2D, MaxPooling2D #, Merge,Conv1D
-from keras import backend as K
-from keras.optimizers import SGD, Adadelta
+from tensorflow.keras.models import Sequential, Model
+from tensorflow.keras.layers import Dense, Dropout, Input, Reshape # , Flatten,LSTM,Convolution1D,MaxPooling1D,Merge
+from tensorflow.keras.layers import Conv1D,LSTM,MaxPooling1D, Lambda, TimeDistributed, Activation,Conv2D, MaxPooling2D #, Merge,Conv1D
+from tensorflow.keras import backend as K
+from tensorflow.keras.optimizers import SGD, Adadelta
 
 from readdata24 import DataSpeech
 
@@ -28,9 +46,9 @@ class ModelSpeech(): # 语音模型类
 	def __init__(self, datapath):
 		'''
 		初始化
-		默认输出的拼音的表示大小是1424，即1423个拼音+1个空白块
+		默认输出的拼音的表示大小是1428，即1427个拼音+1个空白块
 		'''
-		MS_OUTPUT_SIZE = 1424
+		MS_OUTPUT_SIZE = 1428
 		self.MS_OUTPUT_SIZE = MS_OUTPUT_SIZE # 神经网络最终输出的每一个字符向量维度的大小
 		#self.BATCH_SIZE = BATCH_SIZE # 一次训练的batch
 		self.label_max_string_length = 64
@@ -182,7 +200,7 @@ class ModelSpeech(): # 语音模型类
 		加载模型参数
 		'''
 		self._model.load_weights(filename)
-		self.base_model.load_weights(filename + '.base')
+		#self.base_model.load_weights(filename + '.base')
 
 	def SaveModel(self,filename='model_speech/speech_model25',comment=''):
 		'''

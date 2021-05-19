@@ -1,5 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+#
+# Copyright 2016-2099 Ailemon.net
+#
+# This file is part of ASRT Speech Recognition Tool.
+#
+# ASRT is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# ASRT is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with ASRT.  If not, see <https://www.gnu.org/licenses/>.
+# ============================================================================
+
 '''
 感谢原作者的无私奉献
 来自：
@@ -7,9 +25,9 @@ https://www.jianshu.com/p/db0ba022936f
 '''
 
 import tensorflow as tf
-import keras
-import keras.backend as K
-import keras.layers as KL
+import tensorflow.keras as kr
+import tensorflow.keras.backend as K
+import tensorflow.keras.layers as KL
 
 class ParallelModel(keras.models.Model):
     """Subclasses the standard Keras Model and adds multi-GPU support.
